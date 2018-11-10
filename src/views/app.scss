@@ -1,0 +1,40 @@
+body {
+  -webkit-app-region: drag;
+}
+
+.app {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
+  text-align: center;
+
+  margin: 8rem 0;
+
+  h1 {
+    font-weight: 600;
+
+    padding: 0;
+    margin: 0;
+  }
+
+  h3 {
+    color: #999;
+    font-weight: 400;
+
+    padding: 0;
+    margin: 0;
+  }
+
+  .count {
+    font-size: 3rem;
+
+    padding: 4rem;
+  }
+
+  .buttons {
+    -webkit-app-region: no-drag;
+  }
+
+  .note {
+    color: #999;
+  }
+}

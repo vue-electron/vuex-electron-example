@@ -1,0 +1,49 @@
+{
+  "name": "vuex-electron-example",
+  "version": "1.0.0",
+  "description": "Usage example of Vuex Electron",
+  "main": "index.js",
+  "repository": "https://github.com/vue-electron/vuex-electron-example",
+  "author": "Andrew Emelianenko",
+  "license": "MIT",
+  "scripts": {
+    "build:dev": "run-s -s build:main:dev build:renderer:dev",
+    "build:main:dev": "webpack --config config/webpack/main/development.js",
+    "build:renderer:dev": "webpack --config config/webpack/renderer/development.js",
+    "start:dev": "run-p start:renderer:dev start:main:dev",
+    "start:main:dev": "yarn build:dev && electron -r @babel/register ./dist/main.js",
+    "start:renderer:dev": "webpack-dev-server --config config/webpack/renderer/development.js --color"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.5",
+    "@babel/preset-env": "^7.1.5",
+    "@babel/register": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^1.0.1",
+    "electron": "^3.0.8",
+    "file-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^1.1.3",
+    "node-sass": "^4.10.0",
+    "pretty-quick": "^1.8.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "vue": "^2.5.17",
+    "vue-loader": "^15.4.2",
+    "vue-template-compiler": "^2.5.17",
+    "vuex": "^3.0.1",
+    "vuex-electron": "^1.0.0",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10",
+    "webpack-merge": "^4.1.4",
+    "yarn-run-all": "^3.1.1"
+  }
+}
